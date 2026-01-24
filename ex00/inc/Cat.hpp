@@ -1,9 +1,8 @@
 # pragma once
 
-#include <string>
 # include "Animal.hpp"
 
-class Cat
+class Cat : public Animal
 {
 private:
 	/* data */
@@ -12,4 +11,6 @@ public:
 	~Cat();
 	Cat(const Cat& other);
 	Cat& operator=(const Cat& other);
+
+	void makeSound() const override;
 };

@@ -9,7 +9,7 @@ OBJ_DIR = obj/
 INCLUDES = -I ./inc
 HEADERS = inc/Animal.hpp inc/Cat.hpp inc/Dog.hpp
 
-SRCS = src/main.cpp src/Animal.cpp src/Cat.cpp inc/Dog.cpp
+SRCS = src/main.cpp src/Animal.cpp src/Cat.cpp src/Dog.cpp
 OBJS = $(patsubst $(SRC_DIR)%.cpp,$(OBJ_DIR)%.o,$(SRCS))
 .SECONDARY: $(OBJS)
 
