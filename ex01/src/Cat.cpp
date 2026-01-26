@@ -44,3 +44,6 @@ Cat& Cat::operator=(const Cat& other){
 void Cat::makeSound() const {
 	std::cout << "Meow Meow Meow" << std::endl;
 }
+
+
+// bad alloc not the best solution ? 
