@@ -2,41 +2,45 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
+
+void test1(void){
+	std::cout << "Subject test" << std::endl;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;//should not create a leak
+	delete i;
+	std::cout << std::endl;
+}
+
+void test2(void){
+	std::cout << "Array of pointers to Animal" << std::endl;
+
+	int num = 10;
+
+	Animal* animals[num];
+	try{
+		for (int i = 0; i < num; i++){
+			if(i < num / 2 )
+				animals[i] = new Dog();
+			else
+				animals[i] = new Cat();
+			std::cout <<std::endl;
+	}
+	}
+	catch(const std::bad_alloc& e){
+		std::cerr << e.what() << '\n';
+		for(int j = 0; j < num; j++)
+			delete animals[j];
+	}
+	for (int i = 0; i < num; i++)
+		animals[i]->makeSound();
+	for (int i = 0; i < num; i++)
+		delete animals[i];
+}
+
 int main()
 {
-
-Animal animal;
-Cat	cat;
-Dog dog;
-
-Animal wild_cat = cat;
-Animal wild_dog(dog);
-
-animal.makeSound();
-wild_cat.makeSound();
-wild_dog.makeSound();
-cat.makeSound();
-dog.makeSound();
-std::cout << wild_cat.getType() << std::endl;
-std::cout << wild_dog.getType() << std::endl;
-std::cout << cat.getType() << std::endl;
-std::cout << dog.getType() << std::endl;
-
-std::cout << std::string("+", 25) << std::endl;
-std::cout << "Subject tests" <<std::endl;
-
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound();
-j->makeSound();
-meta->makeSound();
-
-delete meta;
-delete j;
-delete i;
-
-return 0;
+	test1();
+	test2();
+	
 }
