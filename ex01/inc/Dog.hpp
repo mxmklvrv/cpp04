@@ -14,4 +14,6 @@ public:
 	~Dog();
 	
 	void makeSound() const override;
+	void setIdea(int i, const std::string& idea);
+	const std::string& getIdea(int i) const;
 };
