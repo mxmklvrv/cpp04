@@ -60,6 +60,8 @@ void test3(void){
 	pes1 = pes3;
 	std::cout << "pes1 new first idea: " << pes1.getIdea(0) << std::endl;
 	std::cout << "pes1 new second idea: " << pes1.getIdea(1) << std::endl;
+	std::cout << "pes2 first idea: " << pes2.getIdea(0) << std::endl;
+	std::cout << "pes2 second idea: " << pes2.getIdea(1) << std::endl;
 	std::cout << std::endl;
 }
 
