@@ -4,6 +4,7 @@
 
 
 void test1(void){
+	std::cout << std::string(50, '+') << std::endl;
 	std::cout << "Subject test" << std::endl;
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -13,6 +14,7 @@ void test1(void){
 }
 
 void test2(void){
+	std::cout << std::string(50, '+') << std::endl;
 	std::cout << "Array of pointers to Animal" << std::endl;
 
 	int num = 10;
@@ -36,9 +38,11 @@ void test2(void){
 		animals[i]->makeSound();
 	for (int i = 0; i < num; i++)
 		delete animals[i];
+	std::cout << std::endl;
 }
 
 void test3(void){
+	std::cout << std::string(50, '+') << std::endl;
 	std::cout << "Dog Brain test" << std::endl;
 	Dog pes1;
 	pes1.setIdea(0, "run");
@@ -56,9 +60,11 @@ void test3(void){
 	pes1 = pes3;
 	std::cout << "pes1 new first idea: " << pes1.getIdea(0) << std::endl;
 	std::cout << "pes1 new second idea: " << pes1.getIdea(1) << std::endl;
+	std::cout << std::endl;
 }
 
 void test4(void){
+	std::cout << std::string(50, '+') << std::endl;
 	std::cout << "Cat Brain test" << std::endl;
 	Cat kot1;
 	kot1.setIdea(0, "run");
@@ -76,6 +82,7 @@ void test4(void){
 	kot1 = kot3;
 	std::cout << "kot1 new first idea: " << kot1.getIdea(0) << std::endl;
 	std::cout << "kot1 new second idea: " << kot1.getIdea(1) << std::endl;
+	std::cout << std::endl;
 
 }
 
@@ -85,4 +92,5 @@ int main()
 	test2();
 	test3();
 	test4();
+
 }
