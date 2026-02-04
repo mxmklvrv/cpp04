@@ -1,15 +1,23 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
+#include "Animal.hpp"
 
 
 void test1(void){
 	std::cout << std::string(50, '+') << std::endl;
 	std::cout << "Subject test" << std::endl;
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	delete j;//should not create a leak
-	delete i;
+	try
+	{
+		const Animal* j = new Dog();
+		const Animal* i = new Cat();
+		delete j;//should not create a leak
+		delete i;
+	}
+	catch(const std::bad_alloc& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	std::cout << std::endl;
 }
 

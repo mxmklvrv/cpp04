@@ -1,7 +1,7 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
-
+#include "Animal.hpp"
 
 void	test1(void){
 std::cout << std::string(50, '+') << std::endl;
@@ -97,12 +97,9 @@ delete delta;
 int main()
 {
 
-// test1();
-// test2();
-// test3();
-
-Animal a;
-a.makeSound();
+test1();
+test2();
+test3();
 
 return 0;
 }

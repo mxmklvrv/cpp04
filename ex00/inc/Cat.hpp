@@ -1,9 +1,7 @@
-# pragma once
+#pragma once
+#include "Animal.hpp"
 
-# include "Animal.hpp"
-
-class Cat : public Animal
-{
+class Cat : public Animal{
 public:
 	Cat();
 	~Cat();
